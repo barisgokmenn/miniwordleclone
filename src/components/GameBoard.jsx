@@ -8,13 +8,15 @@ const GameBoard = ({ guesses, currentGuess }) => {
   for (let i = 0; i < 6; i++) {
     if (i < guesses.length) {
       rows.push(<Row key={i} guess={guesses[i]} />);
-    } else if (i === guesses.length) {
+    } 
+    else if (i === guesses.length) {
       const current = currentGuess
         .toUpperCase()
         .split('')
         .map((letter) => ({ letter, status: '' }));
       rows.push(<Row key={i} guess={current} />);
-    } else {
+    } 
+    else {
       rows.push(<Row key={i} guess={[]} />);
     }
   }
